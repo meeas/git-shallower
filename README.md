@@ -23,8 +23,8 @@ Download the git repository from <URL> and place it in a new directory named aft
   
 `git shallower <URL> <DIR>`
 
-# Download the git repository from <URL> and place it in the <DIR> directory.
+Download the git repository from <URL> and place it in the <DIR> directory.
   
 `git shallower`
 
-# This will re-download the latest version of the git respository that you are in.
+This will re-download the latest version of the git respository that you are in.
