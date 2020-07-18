@@ -29,5 +29,4 @@ else
 fi
 
 git clone --depth 1 $url $dir
-cd $dir/.git
-find . ! -name 'config' -exec rm -rf {} + 2> /dev/null
+cd $dir/.git && find . ! -name 'config' -exec rm -rf {} + 2> /dev/null
