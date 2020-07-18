@@ -12,7 +12,6 @@ Download the git-shallower script and move it to a directory in your path.  For 
 
 ```
 wget https://raw.githubusercontent.com/meeas/git-shallower/master/git-shallower
-chmod +x git-shallower
 sudo mv git-shallower /usr/local/bin/
 ```
 
