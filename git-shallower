@@ -1,0 +1,32 @@
+#!/bin/bash
+# Basic script to update git repository without any history or excess data in .git
+# Only works with master branch for now
+# Grabs url from .git/config, downloads latest version, and purges everyting in .git/ except config file
+
+if [ "$#" -eq "1" ]; then
+    url=$1
+    dir=`echo $url | sed 's/.*\/\(.*\)\.git/\1/'`
+    echo "Downloading git repo from URL: " $url
+
+elif [ "$#" -eq "2" ]; then
+    url=$1
+    dir=$2
+    echo "Using provided URL: " $url
+    echo "Placing files in: " $dir
+
+elif [ -f .git/config ]; then
+    url=`grep -e 'url = ' .git/config | sed 's/.*url = //'`
+    dir='./'
+    echo "Using URL from .git/config: " $url
+    echo "This action will delete all files in the current directory.  Press ENTER to continue or CTRL-C to cancel."
+    rm -rf ..?* .[!.]* *
+
+else
+    echo "No .git/config detected.  Please provide valid git URL or cd to the root of a git repository."
+    exit
+
+fi
+
+git clone --depth 1 $url $dir
+cd $dir/.git
+find . ! -name 'config' -exec rm -rf {} + 2> /dev/null
