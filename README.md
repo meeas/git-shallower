@@ -17,8 +17,14 @@ sudo mv git-shallower /usr/local/bin/
 
 ## Usage
 
-`git shallower <URL>          `# Download the git repository from <URL> and place it in a new directory named after the project.
+`git shallower <URL>`
+
+Download the git repository from <URL> and place it in a new directory named after the project.
   
-`git shallower <URL> <DIR>    `# Download the git repository from <URL> and place it in the <DIR> directory.
+`git shallower <URL> <DIR>`
+
+# Download the git repository from <URL> and place it in the <DIR> directory.
   
-`git shallower                `# This will re-download the latest version of the git respository that you are in.
+`git shallower`
+
+# This will re-download the latest version of the git respository that you are in.
