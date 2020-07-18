@@ -18,7 +18,8 @@ elif [ -f .git/config ]; then
     url=`grep -e 'url = ' .git/config | sed 's/.*url = //'`
     dir='./'
     echo "Using URL from .git/config: " $url
-    echo "This action will delete all files in the current directory.  Press ENTER to continue or CTRL-C to cancel."
+    echo -n "This action will delete all files in the current directory.  Press ENTER to continue or CTRL-C to cancel."
+    read
     rm -rf ..?* .[!.]* *
 
 else
